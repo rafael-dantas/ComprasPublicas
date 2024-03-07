@@ -43,7 +43,7 @@ namespace ComprasPublicas.Aplicacao.Produto.Servico
         public IEnumerable<ProdutoDTO> LitarTodos(int pageNumber, int pageSize = 50)
         {
             var listaRetorno = new List<ProdutoDTO>();
-            if(pageSize > 50 && pageSize < 0)
+            if(pageSize > 50 || pageSize < 0)
                 pageSize = 50;
 
             var lista = _produtoRepositorio.LitarTodos(pageNumber, pageSize).ToList();
